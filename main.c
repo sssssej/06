@@ -1,20 +1,36 @@
 #include <stdio.h>
 
-void func(void)
+int sumTwo(int a, int b)
 {
-    int x;
+    return a + b;
+}
 
-    printf("func x is at %p\n", (void *)&x);
+int square(int n)
+{
+    return n * n;
+}
+
+int get_max(int x, int y)
+{
+    if (x > y)
+        return x;
+    else
+        return y;
 }
 
 int main(void)
 {
-    int x;
+    int result1;
+    int result2;
+    int result3;
 
-    printf("main x is at %p\n", (void *)&x);
+    result1 = sumTwo(10, 20);
+    result2 = square(5);
+    result3 = get_max(15, 25);
 
-    func();
-    func();
+    printf("sumTwo: %d\n", result1);
+    printf("square: %d\n", result2);
+    printf("get_max: %d\n", result3);
 
     return 0;
 }
